@@ -1,0 +1,48 @@
+{
+  "id": "E141",
+  "value": 5.756350927453954e-07,
+  "method": "Independent Python Decimal evaluation at 90 decimal digits; mathematical constants supplied to at least 85 digits. Expected numbers rounded once to IEEE-754 binary64. No JS imports.",
+  "cases": [
+    {
+      "name": "quadratic bandwidth gives double voltage",
+      "values": {
+        "b": 80000
+      },
+      "expected": 1.1512701854907908e-06
+    },
+    {
+      "name": "zero equivalent bandwidth",
+      "values": {
+        "b": 0
+      },
+      "expected": 0.0
+    },
+    {
+      "name": "cryogenic small resistance",
+      "values": {
+        "r": 50,
+        "t": 4,
+        "b": 1000
+      },
+      "expected": 3.3234307575154924e-09
+    },
+    {
+      "name": "large factors with representable final square root",
+      "values": {
+        "r": 1e+200,
+        "t": 1e+100,
+        "b": 1e+50
+      },
+      "expected": 7.431417092318261e+163
+    },
+    {
+      "name": "unrepresentable nonzero noise",
+      "values": {
+        "r": 1e-300,
+        "t": 1e-300,
+        "b": 1e-300
+      },
+      "throws": true
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "id": "E141",
+  "slug": "eng-resistor-thermal-noise",
+  "title": "저항 열잡음 전압 계산기",
+  "title_en": "Resistor Thermal Noise Calculator",
+  "category": "전자·잡음",
+  "category_en": "Electronics and noise",
+  "fields": [
+    {
+      "key": "r",
+      "label": "저항 R",
+      "label_en": "Resistance R",
+      "dimension": "resistance",
+      "example": 1000,
+      "constraint": "positive",
+      "display_unit": "ohm",
+      "display_value": "1000"
+    },
+    {
+      "key": "t",
+      "label": "저항의 절대온도 T",
+      "label_en": "Resistor absolute temperature T",
+      "dimension": "temperature",
+      "example": 300,
+      "constraint": "positive",
+      "display_unit": "K",
+      "display_value": "300"
+    },
+    {
+      "key": "b",
+      "label": "등가잡음대역폭 B",
+      "label_en": "Equivalent noise bandwidth B",
+      "dimension": "frequency",
+      "example": 20000,
+      "constraint": "nonnegative",
+      "display_unit": "Hz",
+      "display_value": "20000"
+    }
+  ],
+  "result_label": "개방회로 열잡음 전압 Vₙ,rms",
+  "result_label_en": "Open-circuit thermal noise voltage Vₙ,rms",
+  "result_dimension": "voltage",
+  "formula": "Vₙ,rms = √(4k_BTRB)",
+  "purpose": "저항과 온도, 등가잡음대역폭으로 저항 양단의 열잡음 실효전압 계산.",
+  "purpose_en": "Estimate the RMS open-circuit thermal noise voltage of a resistor from its temperature and equivalent noise bandwidth.",
+  "assumptions": "열평형의 이상 저항과 고전적인 백색 열잡음 모델입니다. B는 필터의 등가잡음대역폭으로, 임의의 −3 dB 대역폭과 같지 않을 수 있습니다. 부하가 없는 저항 양단 전압이며, 부하 분압·초과잡음·양자 고주파 보정은 제외합니다. 사용 주파수에서 hf ≪ k_BT인지 별도로 확인하세요.",
+  "assumptions_en": "Required: a resistor in thermal equilibrium and the classical white-noise regime hf ≪ k_BT throughout the relevant band. B is the equivalent noise bandwidth, which can differ from a filter’s −3 dB bandwidth. The result is the unloaded open-circuit RMS voltage. Excluded: load division, excess noise and quantum-frequency corrections.",
+  "sources": [
+    {
+      "label": "Texas Instruments — Signal Chain Noise Figure Analysis, thermal noise",
+      "url": "https://www.ti.com/lit/an/slaa652/slaa652.pdf"
+    }
+  ],
+  "condition": "등가잡음대역폭과 고전 열잡음 적용 조건을 확인했습니다.",
+  "condition_en": "I have checked the equivalent noise bandwidth and the classical thermal-noise regime.",
+  "output_unit": "uV",
+  "site": "https://nanalab.kr/eng-resistor-thermal-noise/",
+  "repository": "https://github.com/NaNaCompany/eng-resistor-thermal-noise",
+  "groups": []
+}
